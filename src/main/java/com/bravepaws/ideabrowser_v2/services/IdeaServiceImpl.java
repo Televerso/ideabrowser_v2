@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IdeaServiceImp implements IdeaService{
+public class IdeaServiceImpl implements IdeaService{
     @Autowired
     private IdeaCrudRepository ideaCrudRepository;
 
