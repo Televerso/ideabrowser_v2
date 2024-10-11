@@ -1,5 +1,6 @@
 package com.bravepaws.ideabrowser_v2.tables;
 
+import com.bravepaws.ideabrowser_v2.services.IdeaService;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,22 +14,6 @@ public class TableIdeas implements BaseTable{
     private String Status;
     private int IdeaTheme;
 
-    public TableIdeas() {
-
-    }
-    public TableIdeas(String ideaName)
-    {
-        this.ideaName = ideaName;
-    }
-    public TableIdeas(String ideaName, String description, String category, int customer, int ideaTheme, String status)
-    {
-        this.ideaName = ideaName;
-        this.Description = description;
-        this.Category = category;
-        this.Customer = customer;
-        this.IdeaTheme = ideaTheme;
-        this.Status = status;
-    }
 
     @Id
     @Column(name = "IDEAID")
@@ -108,5 +93,6 @@ public class TableIdeas implements BaseTable{
     {
         this.Status = status;
     }
+
 }
 

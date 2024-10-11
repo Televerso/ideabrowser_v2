@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface IdeaCrudRepository extends CrudRepository<TableIdeas, Integer>
 {
-    List<TableIdeas> findByIdeaId(Integer id);
+    TableIdeas findByIdeaId(Integer id);
 
     List<TableIdeas> findByIdeaName(String Name);
 
