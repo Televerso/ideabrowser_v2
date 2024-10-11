@@ -14,6 +14,25 @@ public class TableUsers implements BaseTable{
     private Date birthDate;
     private int userIdeas;
 
+    public TableUsers() {}
+
+    public TableUsers(String userName)
+    {
+        this.userName = userName;
+        this.contactInfo = userName;
+        this.registrationDate = new Date(System.currentTimeMillis());
+        this.birthDate = new Date(System.currentTimeMillis());
+        this.userIdeas = 0;
+    }
+
+    public TableUsers(String userName, String contactInfo, Date registrationDate, Date birthDate, int userIdeas)
+    {
+        this.userName = userName;
+        this.contactInfo = contactInfo;
+        this.registrationDate = new Date(System.currentTimeMillis());
+        this.birthDate = birthDate;
+        this.userIdeas = userIdeas;
+    }
 
     @Id
     @Column(name = "USERID")

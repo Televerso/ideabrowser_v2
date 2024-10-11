@@ -10,6 +10,22 @@ public class TableThemes implements BaseTable{
     private String themeFieldOA;
     private String themeTag;
 
+    public TableThemes(){}
+
+    public TableThemes(String themeName)
+    {
+        this.themeName = themeName;
+        this.themeFieldOA = themeName;
+        this.themeTag = themeName;
+    }
+
+    public TableThemes(String themeName, String themeFieldOA, String themeTag)
+    {
+        this.themeName = themeName;
+        this.themeFieldOA = themeFieldOA;
+        this.themeTag = themeTag;
+    }
+
     @Id
     @Column(name = "THEMEID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "THEME_ID_GEN")

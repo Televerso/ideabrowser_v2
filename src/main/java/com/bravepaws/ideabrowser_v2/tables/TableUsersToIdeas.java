@@ -9,6 +9,14 @@ public class TableUsersToIdeas implements BaseTable{
     private int ideaid;
     private int userid;
 
+    public TableUsersToIdeas() {}
+
+    public TableUsersToIdeas(int ideaid, int userid)
+    {
+        this.ideaid = ideaid;
+        this.userid = userid;
+    }
+
     @Id
     @Column(name = "UTIID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "UTI_ID_GEN")

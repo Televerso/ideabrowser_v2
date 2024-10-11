@@ -14,11 +14,30 @@ public class TableIdeas implements BaseTable{
     private String Status;
     private int IdeaTheme;
 
+    public TableIdeas() {}
+    public TableIdeas(String ideaName, int customer, String status)
+    {
+        this.ideaName = ideaName;
+        this.Customer = customer;
+        this.Status = status;
+        this.IdeaTheme = 0;
+        this.Description = "";
+        this.Category = "None";
+    }
+    public TableIdeas(String ideaName, String Description, String Category, int Customer, String Status, int IdeaTheme)
+    {
+        this.ideaName = ideaName;
+        this.Description = Description;
+        this.Category = Category;
+        this.Customer = Customer;
+        this.Status = Status;
+        this.IdeaTheme = IdeaTheme;
+    }
 
     @Id
-    @Column(name = "IDEAID")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "IDEA_ID_GEN")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "IDEA_ID_GEN")
     @SequenceGenerator(name = "IDEA_ID_GEN", sequenceName = "ideas_pk", allocationSize = 1)
+    @Column(name = "IDEAID")
     public int getIdeaId()
     {
         return ideaid;
