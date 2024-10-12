@@ -37,7 +37,7 @@ public class TableUsers implements BaseTable{
     @Id
     @Column(name = "USERID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ID_GEN")
-    @SequenceGenerator(name = "USER_ID_GEN", sequenceName = "users_pk", allocationSize = 1)
+    @SequenceGenerator(name = "USER_ID_GEN", sequenceName = "users_seq", allocationSize = 1)
     public int getUserId()
     {
         return userid;

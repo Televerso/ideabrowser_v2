@@ -17,10 +17,9 @@ public class IdeaBrowserV2Application {
 
     public static void main(String[] args) {
         SpringApplication.run(IdeaBrowserV2Application.class, args);
-        TableIdeas tableIdeas = new TableIdeas();
-        System.out.println(tableIdeas.toString());
     }
 
+    /*
     @Bean
     public CommandLineRunner demo(@Qualifier("ideaCrudRepository") IdeaCrudRepository repository, ThemeCrudRepository themeCrudRepository) {
         return (args) -> {
@@ -54,6 +53,7 @@ public class IdeaBrowserV2Application {
             System.out.println("");
         };
     }
+    */
 
 }
 

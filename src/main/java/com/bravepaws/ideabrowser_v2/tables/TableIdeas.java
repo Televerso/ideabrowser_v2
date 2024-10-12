@@ -3,9 +3,11 @@ package com.bravepaws.ideabrowser_v2.tables;
 import com.bravepaws.ideabrowser_v2.services.IdeaService;
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "ideas")
 public class TableIdeas implements BaseTable{
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ideaid;
     private String ideaName;
     private String Description;
@@ -35,12 +37,12 @@ public class TableIdeas implements BaseTable{
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "IDEA_ID_GEN")
-    @SequenceGenerator(name = "IDEA_ID_GEN", sequenceName = "ideas_pk", allocationSize = 1)
-    @Column(name = "IDEAID")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "IDEA_ID_GEN")
+    @SequenceGenerator(name = "IDEA_ID_GEN", sequenceName = "ideas_seq", allocationSize = 1)
+    @Column(name = "IDEAID", nullable = false)
     public int getIdeaId()
     {
-        return ideaid;
+        return this.ideaid;
     }
     public void setIdeaId(int ideaid)
     {
@@ -112,6 +114,5 @@ public class TableIdeas implements BaseTable{
     {
         this.Status = status;
     }
-
 }
 

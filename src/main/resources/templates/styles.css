@@ -1,0 +1,84 @@
+body {
+    h1 {
+      text-align: center;
+    }
+    hr {
+      color: white;
+      text-align: center;
+    }
+    background: #0D493D;
+}
+  .LabelFirstLetter {
+    color: #00FF53;
+    font-size: 100%;
+  }
+  .Label {
+    font-family: system-ui;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 120%;
+  }
+  .CategoryLabel {
+    color: white;
+    text-align : left;
+    font-family: system-ui;
+    text-transform: capitalize;
+    font-size: 120%;
+    text-decoration: underline;
+  }
+  .CreateIdeaLabel {
+    font-family: system-ui;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 160%;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .GenericButton {
+      border: solid;
+      border-radius: 10px;
+      border-color: #DCFFC9;
+      color: white;
+      transition: .1s linear;
+      background: transparent;
+  }
+  .GenericButton:hover {
+      box-shadow: 0 0 0 2px white, 0 0 0 4px #DCFFC9;
+  }
+  .CreateIdeaDiv {
+    text-align: center;
+  }
+  .TagTextStyle {
+    color: white;
+    text-align : left;
+    font-family: system-ui;
+    text-transform: capitalize;
+    font-size: 120%;
+  }
+  .IdeaLineDiv div {
+    float: left;
+    margin-bottom: 15px;
+    height: 100px;
+  }
+  .IdeaBlockDiv {
+    background: white;
+    width: 71%;
+  }
+  .BlankBlockDiv {
+    background: transparent;
+    width: 3.6%;
+  }
+  .UserBlockDiv {
+    background: white;
+    width: 25.4%;
+  }
+  .GenericTextStyle {
+    color: #0F164D;
+    text-align: left;
+    font-family: system-ui;
+    font-size: 120%;
+    font-weight: 400;
+    padding: 10px 10px 10px 10px;
+  }

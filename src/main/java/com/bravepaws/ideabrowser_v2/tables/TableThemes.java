@@ -29,7 +29,7 @@ public class TableThemes implements BaseTable{
     @Id
     @Column(name = "THEMEID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "THEME_ID_GEN")
-    @SequenceGenerator(name = "THEME_ID_GEN", sequenceName = "themes_pk", allocationSize = 1)
+    @SequenceGenerator(name = "THEME_ID_GEN", sequenceName = "themes_seq", allocationSize = 1)
     public int getThemeId()
     {
         return themeid;
