@@ -1,18 +1,22 @@
 package com.bravepaws.ideabrowser_v2.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class WebController {
-
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting.html";
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
+    public String redirect() {
+        return "redirect:userpage";
+    }
+    @RequestMapping(value = "/userpage", method = RequestMethod.GET)
+    public String userpage() {
+        return "userpage";
     }
 
 }
