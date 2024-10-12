@@ -47,7 +47,7 @@ body {
   .GenericButton:hover {
       box-shadow: 0 0 0 2px white, 0 0 0 4px #DCFFC9;
   }
-  .CreateIdeaDiv {
+  .CentralDiv {
     text-align: center;
   }
   .TagTextStyle {
@@ -82,3 +82,18 @@ body {
     font-weight: 400;
     padding: 10px 10px 10px 10px;
   }
+.ErrorText {
+  color: white;
+  text-align: center;
+  font-family: system-ui;
+  font-size: 200%;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.UserPageDiv {
+  float: left;
+  margin-bottom: 15px;
+  height: 100px;
+  width: 100%;
+  background: #DCFFC9;
+}
