@@ -27,8 +27,10 @@
 </p>
 <hr>
 <div class =  "CentralDiv">
+    <form action="newidea" method="get">
     <button type="NewIdeaButton" class="GenericButton"> <span class = "CreateIdeaLabel">Создать новую идею</span>
     </button>
+    </form>
 </div>
 <hr>
 <div th:each="Line:${Table}" class = "IdeaLineDiv">
@@ -41,7 +43,7 @@
         <br>
         <!--/*@thymesVar id="l_theme" type="com.bravepaws.ideabrowser_v2.tables.TableThemes"*/-->
         <!--/*@thymesVar id="themeName" type="java.lang.String"*/-->
-        <span class = "GenericTextStyle" th:text="'Категория: ' + ${Line.l_theme.themeName}"/>
+        <span class = "GenericTextStyle" th:text="'Категория: ' + ${Line.l_idea.Category}"/>
         <br>
         <!--/*@thymesVar id="Status" type="java.lang.String"*/-->
         <span class = "GenericTextStyle" th:text="'Статус: ' + ${Line.l_idea.Status}"/>

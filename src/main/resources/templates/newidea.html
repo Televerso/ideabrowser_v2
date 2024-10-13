@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>New Idea</title>
+    <link href="../static/styles.css" rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 <body>
+<h1>
+  <span class = "Label">
+    <span class= "LabelFirstLetter">c</span>reate
+    <span class= "LabelFirstLetter">y</span>our
+    <span class= "LabelFirstLetter">o</span>wn
+    <span class= "LabelFirstLetter">i</span>dea
+  </span>
+</h1>
+<hr>
+<div class="GenericPageDiv">
+    <form action="createidea" method="post" target="_top" >
+    <span class="GenericTextStyle">Создание идеи</span>
+    <br>
+    <span class="GenericTextStyle">
+   <input type=text name="ideaName" id="ideaName" placeholder="Название идеи" required minlength="1">
+  </span>
+    <br>
+    <span class="GenericTextStyle">
+   <input type=text name="Category" id="Category" placeholder="Категория" required minlength="1">
+  </span>
+    <br>
+    <span class="GenericTextStyle">
+   <input type=text name="Description" id="Description" placeholder="Описание" required minlength="4">
+  </span>
+    <br>
+    <div class="CentralDiv">
+  <span class="GenericText">
+      <button type="submit" class="InlineButton"> <span class = "GenericTextStyle">Создать новую идею</span>
+    </button>
+  </span>
+    </div>
+    </form>
+</div>
+<hr>
 
 </body>
 </html>

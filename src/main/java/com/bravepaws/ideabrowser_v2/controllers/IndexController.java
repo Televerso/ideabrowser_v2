@@ -33,7 +33,7 @@ public class IndexController {
         this.themeService = themeService;
         this.utiService = utiService;
     }
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         List<TableIdeas> ideas = ideaService.getTableIdeasList();
         List<TableLine> data = new ArrayList<>();
@@ -46,14 +46,6 @@ public class IndexController {
         model.addAttribute("Table", data.toArray());
 
         return "index";
-    }
-    @PostMapping(path = "/save")
-    public TableIdeas save(@RequestBody TableIdeas idea) {
-        return ideaService.saveTableIdea(idea);
-    }
-    public List<TableIdeas> getTableIdeas()
-    {
-        return ideaService.getTableIdeasList();
     }
 }
 

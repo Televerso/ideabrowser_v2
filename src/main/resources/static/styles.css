@@ -98,10 +98,22 @@ body {
   font-weight: 600;
   text-transform: capitalize;
 }
-.UserPageDiv {
+.GenericPageDiv {
   float: left;
-  margin-bottom: 15px;
-  height: 100px;
+  margin-bottom: 7px;
+  padding-bottom:15px;
   width: 100%;
   background: #DCFFC9;
+}
+.InlineButton {
+  border: solid;
+  border-radius: 10px;
+  border-color: #E28dFF;
+  color: white;
+  transition: .1s linear;
+  background: #FFF844;
+}
+.InlineButton:hover {
+  border-color: #97FF56;
+  box-shadow: 0 0 0 1px #0D493D, 0 0 0 2px #97FF56;
 }
