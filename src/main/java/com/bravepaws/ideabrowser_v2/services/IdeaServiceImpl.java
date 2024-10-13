@@ -32,4 +32,7 @@ public class IdeaServiceImpl implements IdeaService{
     public void deleteTableIdea(TableIdeas tableIdea) {
         ideaCrudRepository.delete(tableIdea);
     }
+
+    @Transactional
+    public TableIdeas getTableIdeaById(int id) {return ideaCrudRepository.findByIdeaId(id);}
 }

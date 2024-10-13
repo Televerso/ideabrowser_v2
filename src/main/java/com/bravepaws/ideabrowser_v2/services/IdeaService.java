@@ -14,4 +14,6 @@ public interface IdeaService {
     TableIdeas updateTableIdea(TableIdeas tableIdea);
 
     void deleteTableIdea(TableIdeas tableIdea);
+
+    TableIdeas getTableIdeaById(int id);
 }

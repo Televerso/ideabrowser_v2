@@ -12,4 +12,6 @@ public interface UserService {
     TableUsers updateUser(TableUsers user);
 
     void deleteUser(TableUsers user);
+
+    TableUsers getUserById(int id);
 }

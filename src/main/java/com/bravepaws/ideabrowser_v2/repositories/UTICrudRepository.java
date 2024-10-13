@@ -1,6 +1,6 @@
 package com.bravepaws.ideabrowser_v2.repositories;
 
-import com.bravepaws.ideabrowser_v2.tables.TableUsers;
+
 import com.bravepaws.ideabrowser_v2.tables.TableUsersToIdeas;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface UserCrudRepository extends CrudRepository<TableUsers, Integer> {
-    List<TableUsers> findByUserName(String username);
+public interface UTICrudRepository extends CrudRepository<TableUsersToIdeas, Integer>
+{
+    TableUsersToIdeas findByUtiId(Integer id);
 
-    TableUsers findByUserId(Integer id);
+    List<TableUsersToIdeas> findByIdeaid(int ideaId);
 
+    List<TableUsersToIdeas> findByUserid(int userId);
 }

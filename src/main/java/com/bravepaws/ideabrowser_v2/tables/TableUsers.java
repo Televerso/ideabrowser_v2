@@ -25,7 +25,7 @@ public class TableUsers implements BaseTable{
         this.userIdeas = 0;
     }
 
-    public TableUsers(String userName, String contactInfo, Date registrationDate, Date birthDate, int userIdeas)
+    public TableUsers(String userName, String contactInfo, Date birthDate, int userIdeas)
     {
         this.userName = userName;
         this.contactInfo = contactInfo;

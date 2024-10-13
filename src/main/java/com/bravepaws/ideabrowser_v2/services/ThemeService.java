@@ -14,4 +14,6 @@ public interface ThemeService {
     TableThemes updateTheme(TableThemes theme);
 
     void deleteTheme(TableThemes theme);
+
+    TableThemes getThemeById(int id);
 }

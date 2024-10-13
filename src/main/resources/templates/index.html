@@ -31,19 +31,34 @@
     </button>
 </div>
 <hr>
-<div class = "IdeaLineDiv">
-    <div class = "IdeaBlockDiv">
-    <span class = "GenericTextStyle">
-      Название идеи
-    </span>
+<div th:each="Line:${Table}" class = "IdeaLineDiv">
+    <div  class = "IdeaBlockDiv">
+      <!--/*@thymesVar id="l_idea" type="com.bravepaws.ideabrowser_v2.tables.TableIdeas"*/-->
+        <!--/*@thymesVar id="ideaId" type="java.lang.Integer"*/-->
+      <span class = "GenericTextStyle" th:text="'Идея #' + ${Line.l_idea.ideaId}+':'"/>
+        <!--/*@thymesVar id="ideaName" type="java.lang.String"*/-->
+        <span class = "GenericTextStyle" th:text="${Line.l_idea.ideaName}"/>
+        <br>
+        <!--/*@thymesVar id="l_theme" type="com.bravepaws.ideabrowser_v2.tables.TableThemes"*/-->
+        <!--/*@thymesVar id="themeName" type="java.lang.String"*/-->
+        <span class = "GenericTextStyle" th:text="'Категория: ' + ${Line.l_theme.themeName}"/>
+        <br>
+        <!--/*@thymesVar id="Status" type="java.lang.String"*/-->
+        <span class = "GenericTextStyle" th:text="'Статус: ' + ${Line.l_idea.Status}"/>
+        <br>
+        <!--/*@thymesVar id="Description" type="java.lang.String"*/-->
+        <span class = "GenericTextStyle" th:text="'Идея: ' + ${Line.l_idea.Description}"/>
     </div>
     <div class = "BlankBlockDiv">
 
     </div>
-    <div class = "UserBlockDiv">
-    <span class = "GenericTextStyle">
-      Данные пользователя
-    </span>
+    <div  class = "UserBlockDiv">
+      <!--/*@thymesVar id="l_user" type="com.bravepaws.ideabrowser_v2.tables.TableUsers"*/-->
+        <!--/*@thymesVar id="userName" type="java.lang.String"*/-->
+      <span class = "GenericTextStyle" th:text="'Автор идеи: ' + ${Line.l_user.userName}"/>
+        <br>
+        <!--/*@thymesVar id="contactInfo" type="java.lang.String"*/-->
+        <span class = "GenericTextStyle" th:text="'Контактные данные: ' + ${Line.l_user.contactInfo}"/>
     </div>
 </div>
 </body>

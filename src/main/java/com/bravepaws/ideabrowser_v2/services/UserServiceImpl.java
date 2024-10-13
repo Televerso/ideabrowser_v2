@@ -1,7 +1,6 @@
 package com.bravepaws.ideabrowser_v2.services;
 
 import com.bravepaws.ideabrowser_v2.repositories.UserCrudRepository;
-import com.bravepaws.ideabrowser_v2.tables.TableIdeas;
 import com.bravepaws.ideabrowser_v2.tables.TableUsers;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +31,10 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void deleteUser(TableUsers user) {
         userCrudRepository.delete(user);
+    }
+
+    @Transactional
+    public TableUsers getUserById(int id) {
+        return userCrudRepository.findByUserId(id);
     }
 }
