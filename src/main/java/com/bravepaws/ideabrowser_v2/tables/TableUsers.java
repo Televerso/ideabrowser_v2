@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
+// Таблица пользователей
 @Entity
 @Table(name = "users")
 public class TableUsers implements BaseTable {
@@ -13,9 +14,11 @@ public class TableUsers implements BaseTable {
     private Date registrationDate;
     private Date birthDate;
 
+    // Конструктор по умолчанию
     public TableUsers() {
     }
 
+    // Протсой конструктор
     public TableUsers(String userName) {
         this.userName = userName;
         this.contactInfo = userName;
@@ -23,6 +26,7 @@ public class TableUsers implements BaseTable {
         this.birthDate = new Date(System.currentTimeMillis());
     }
 
+    // Сложный конструктор
     public TableUsers(String userName, String contactInfo, Date birthDate) {
         this.userName = userName;
         this.contactInfo = contactInfo;
@@ -30,6 +34,8 @@ public class TableUsers implements BaseTable {
         this.birthDate = birthDate;
     }
 
+    // Дальше идут сеттеры и геттеры для полей таблицы
+    // Поле id генерируется, последовательность users_seq содержится в базе данных
     @Id
     @Column(name = "USERID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ID_GEN")

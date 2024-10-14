@@ -25,11 +25,13 @@ public class ThemeServiceImpl implements ThemeService {
 
     @Transactional
     public TableThemes updateTheme(TableThemes theme) {
+        // TODO обновление темы
         return themeCrudRepository.save(theme);
     }
 
     @Transactional
     public void deleteTheme(TableThemes theme) {
+        // TODO удаление темы
         themeCrudRepository.delete(theme);
     }
 

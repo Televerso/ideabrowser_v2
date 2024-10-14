@@ -2,29 +2,36 @@ package com.bravepaws.ideabrowser_v2.tables;
 
 import jakarta.persistence.*;
 
+// Таблица тем
 @Entity
 @Table(name = "themes")
 public class TableThemes implements BaseTable {
+    // Поля таблицы
     private int themeid;
     private String themeName;
     private String themeFieldOA;
     private String themeTag;
 
+    // Конструктор по умолчанию
     public TableThemes() {
     }
 
+    // Простой конструктор
     public TableThemes(String themeName) {
         this.themeName = themeName;
         this.themeFieldOA = themeName;
         this.themeTag = themeName;
     }
 
+    // Сложный конструктор
     public TableThemes(String themeName, String themeFieldOA, String themeTag) {
         this.themeName = themeName;
         this.themeFieldOA = themeFieldOA;
         this.themeTag = themeTag;
     }
 
+    // Дальше идут сеттеры и геттеры для полей таблицы
+    // Поле id генерируется, последовательность themes_seq содержится в базе данных
     @Id
     @Column(name = "THEMEID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "THEME_ID_GEN")

@@ -16,9 +16,24 @@ public interface IdeaCrudRepository extends CrudRepository<TableIdeas, Integer> 
      */
     List<TableIdeas> findByIdeaName(String Name);
 
+    /**
+     * Поиск идей по категории
+     * @param Category категория идей
+     * @return список найденных идей
+     */
     List<TableIdeas> findByCategory(String Category);
 
+    /**
+     * Поиск идеи по идентификатору
+     * @param id id идеи
+     * @return найденная идея
+     */
     TableIdeas findByIdeaId(Integer id);
 
+    /**
+     * Поиск идеи по пользователю
+     * @param id id пользователя
+     * @return список найденных идей
+     */
     List<TableIdeas> findByCustomer(Integer id);
 }

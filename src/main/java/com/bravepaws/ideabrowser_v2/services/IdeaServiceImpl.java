@@ -25,11 +25,13 @@ public class IdeaServiceImpl implements IdeaService {
 
     @Transactional
     public TableIdeas updateTableIdea(TableIdeas tableIdea) {
+        // TODO обновление идей
         return ideaCrudRepository.save(tableIdea);
     }
 
     @Transactional
     public void deleteTableIdea(TableIdeas tableIdea) {
+        // TODO удаление идей
         ideaCrudRepository.delete(tableIdea);
     }
 

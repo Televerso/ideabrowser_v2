@@ -25,11 +25,13 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     public TableUsers updateUser(TableUsers user) {
+        // TODO обновление пользователя
         return userCrudRepository.save(user);
     }
 
     @Transactional
     public void deleteUser(TableUsers user) {
+        // TODO удаление пользователя
         userCrudRepository.delete(user);
     }
 

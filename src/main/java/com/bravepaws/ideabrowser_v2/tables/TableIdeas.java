@@ -2,10 +2,11 @@ package com.bravepaws.ideabrowser_v2.tables;
 
 import jakarta.persistence.*;
 
-
+// Таблица идей
 @Entity
 @Table(name = "ideas")
 public class TableIdeas implements BaseTable {
+    // Поля таблицы
     private int ideaid;
     private String ideaName;
     private String Description;
@@ -14,18 +15,21 @@ public class TableIdeas implements BaseTable {
     private String Status;
     private int IdeaTheme;
 
+    // Конструктор по умолчанию
     public TableIdeas() {
     }
 
+    // Конструктор
     public TableIdeas(String ideaName, int customer, String status) {
         this.ideaName = ideaName;
         this.Customer = customer;
         this.Status = status;
-        this.IdeaTheme = 0;
-        this.Description = "";
-        this.Category = "None";
+        this.IdeaTheme = 0; // Тема по умолчанию иммет id=0
+        this.Description = ""; // Пустое описание
+        this.Category = "None"; // Категории нет
     }
 
+    // Еще конструктор
     public TableIdeas(String ideaName, String Description, String Category, int Customer, String Status, int IdeaTheme) {
         this.ideaName = ideaName;
         this.Description = Description;
@@ -35,6 +39,8 @@ public class TableIdeas implements BaseTable {
         this.IdeaTheme = IdeaTheme;
     }
 
+    // Дальше идут сеттеры и геттеры для полей таблицы
+    // Поле id генерируется, последовательность ideas_seq содержится в базе данных
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "IDEA_ID_GEN")
     @SequenceGenerator(name = "IDEA_ID_GEN", sequenceName = "ideas_seq", allocationSize = 1)
