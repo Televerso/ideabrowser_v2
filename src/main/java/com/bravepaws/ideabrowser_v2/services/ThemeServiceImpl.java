@@ -12,6 +12,7 @@ import java.util.List;
 public class ThemeServiceImpl implements ThemeService {
     @Autowired
     private ThemeCrudRepository themeCrudRepository;
+
     @Transactional
     public TableThemes saveTheme(TableThemes theme) {
         return themeCrudRepository.save(theme);
@@ -33,5 +34,7 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Transactional
-    public TableThemes getThemeById(int id) {return themeCrudRepository.findByThemeId(id);}
+    public TableThemes getThemeById(int id) {
+        return themeCrudRepository.findByThemeId(id);
+    }
 }

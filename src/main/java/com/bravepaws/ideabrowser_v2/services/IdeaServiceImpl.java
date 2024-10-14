@@ -1,7 +1,7 @@
 package com.bravepaws.ideabrowser_v2.services;
 
-import com.bravepaws.ideabrowser_v2.tables.TableIdeas;
 import com.bravepaws.ideabrowser_v2.repositories.IdeaCrudRepository;
+import com.bravepaws.ideabrowser_v2.tables.TableIdeas;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class IdeaServiceImpl implements IdeaService{
+public class IdeaServiceImpl implements IdeaService {
     @Autowired
     private IdeaCrudRepository ideaCrudRepository;
 
@@ -34,11 +34,12 @@ public class IdeaServiceImpl implements IdeaService{
     }
 
     @Transactional
-    public TableIdeas getTableIdeaById(int id) {return ideaCrudRepository.findByIdeaId(id);}
+    public TableIdeas getTableIdeaById(int id) {
+        return ideaCrudRepository.findByIdeaId(id);
+    }
 
     @Transactional
-    public List<TableIdeas> getIdeasByCustomer(int customer)
-    {
+    public List<TableIdeas> getIdeasByCustomer(int customer) {
         return ideaCrudRepository.findByCustomer(customer);
     }
 }

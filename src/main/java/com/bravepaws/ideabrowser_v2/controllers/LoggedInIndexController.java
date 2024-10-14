@@ -10,7 +10,10 @@ import com.bravepaws.ideabrowser_v2.tables.TableUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,28 +26,27 @@ public class LoggedInIndexController {
     private TableUsers currUser;
 
     @Autowired
-    public LoggedInIndexController(UserService userService, IdeaService ideaService, ThemeService themeService)
-    {
+    public LoggedInIndexController(UserService userService, IdeaService ideaService, ThemeService themeService) {
         this.userService = userService;
         this.ideaService = ideaService;
         this.themeService = themeService;
     }
 
     @RequestMapping(value = "/loggedinindex", method = RequestMethod.POST)
-    public String loggerinindex(Model model)
-    {
+    public String loggerinindex(Model model) {
         currUser = (TableUsers) model.getAttribute("User");
         return "loggedinindex";
     }
+
     @PostMapping(path = "/login")
     public String save(@RequestParam("login") String login, Model model) {
         currUser = userService.getUserByName(login);
         model.addAttribute("User", currUser);
         return "loggedinindex";
     }
-    @PostMapping(path="/allIdeas")
-    public String allIdeas(Model model)
-    {
+
+    @PostMapping(path = "/allIdeas")
+    public String allIdeas(Model model) {
         List<TableIdeas> ideas = ideaService.getTableIdeasList();
         List<TableLine> data = new ArrayList<>();
         for (int i = 0; i < ideas.size(); i++) {
@@ -57,9 +59,9 @@ public class LoggedInIndexController {
         model.addAttribute("Table", data.toArray());
         return "loggedinindex";
     }
-    @PostMapping(path="/myIdeas")
-    public String myIdeas(Model model)
-    {
+
+    @PostMapping(path = "/myIdeas")
+    public String myIdeas(Model model) {
         List<TableIdeas> ideas = ideaService.getIdeasByCustomer(currUser.getUserId());
         List<TableLine> data = new ArrayList<>();
         for (int i = 0; i < ideas.size(); i++) {

@@ -11,7 +11,8 @@ import com.bravepaws.ideabrowser_v2.tables.TableUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +24,12 @@ public class IndexController {
     private final ThemeService themeService;
 
     @Autowired
-    public IndexController(UserService userService, IdeaService ideaService, ThemeService themeService)
-    {
+    public IndexController(UserService userService, IdeaService ideaService, ThemeService themeService) {
         this.userService = userService;
         this.ideaService = ideaService;
         this.themeService = themeService;
     }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage(Model model) {
         List<TableIdeas> ideas = ideaService.getTableIdeasList();
@@ -43,9 +44,9 @@ public class IndexController {
 
         return "index";
     }
-    @RequestMapping(value="/index",method = RequestMethod.GET)
-    public String index(Model model)
-    {
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(Model model) {
         return "redirect:";
     }
 }

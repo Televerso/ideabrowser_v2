@@ -6,25 +6,24 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "users")
-public class TableUsers implements BaseTable{
+public class TableUsers implements BaseTable {
     private int userid;
     private String userName;
     private String contactInfo;
     private Date registrationDate;
     private Date birthDate;
 
-    public TableUsers() {}
+    public TableUsers() {
+    }
 
-    public TableUsers(String userName)
-    {
+    public TableUsers(String userName) {
         this.userName = userName;
         this.contactInfo = userName;
         this.registrationDate = new Date(System.currentTimeMillis());
         this.birthDate = new Date(System.currentTimeMillis());
     }
 
-    public TableUsers(String userName, String contactInfo, Date birthDate)
-    {
+    public TableUsers(String userName, String contactInfo, Date birthDate) {
         this.userName = userName;
         this.contactInfo = contactInfo;
         this.registrationDate = new Date(System.currentTimeMillis());
@@ -35,56 +34,51 @@ public class TableUsers implements BaseTable{
     @Column(name = "USERID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ID_GEN")
     @SequenceGenerator(name = "USER_ID_GEN", sequenceName = "users_seq", allocationSize = 1)
-    public int getUserId()
-    {
+    public int getUserId() {
         return userid;
     }
-    public void setUserId(int userid)
-    {
+
+    public void setUserId(int userid) {
         this.userid = userid;
     }
 
     @Basic
     @Column(name = "USER NAME")
-    public String getUserName()
-    {
+    public String getUserName() {
         return userName;
     }
-    public void setUserName(String userName)
-    {
+
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
     @Basic
     @Column(name = "CONTACT INFO")
-    public String getContactInfo()
-    {
+    public String getContactInfo() {
         return contactInfo;
     }
-    public void setContactInfo(String contactInfo)
-    {
+
+    public void setContactInfo(String contactInfo) {
         this.contactInfo = contactInfo;
     }
 
     @Basic
     @Column(name = "REGISTRATION DATE")
-    public Date getRegistrationDate()
-    {
+    public Date getRegistrationDate() {
         return registrationDate;
     }
-    public void setRegistrationDate(Date registrationDate)
-    {
+
+    public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
 
     @Basic
     @Column(name = "BIRTH DATE")
-    public Date getBirthDate()
-    {
+    public Date getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(Date birthDate)
-    {
+
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 }

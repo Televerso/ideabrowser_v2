@@ -4,23 +4,22 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "themes")
-public class TableThemes implements BaseTable{
+public class TableThemes implements BaseTable {
     private int themeid;
     private String themeName;
     private String themeFieldOA;
     private String themeTag;
 
-    public TableThemes(){}
+    public TableThemes() {
+    }
 
-    public TableThemes(String themeName)
-    {
+    public TableThemes(String themeName) {
         this.themeName = themeName;
         this.themeFieldOA = themeName;
         this.themeTag = themeName;
     }
 
-    public TableThemes(String themeName, String themeFieldOA, String themeTag)
-    {
+    public TableThemes(String themeName, String themeFieldOA, String themeTag) {
         this.themeName = themeName;
         this.themeFieldOA = themeFieldOA;
         this.themeTag = themeTag;
@@ -30,45 +29,41 @@ public class TableThemes implements BaseTable{
     @Column(name = "THEMEID")
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "THEME_ID_GEN")
     @SequenceGenerator(name = "THEME_ID_GEN", sequenceName = "themes_seq", allocationSize = 1)
-    public int getThemeId()
-    {
+    public int getThemeId() {
         return themeid;
     }
-    public void setThemeId(int themeid)
-    {
+
+    public void setThemeId(int themeid) {
         this.themeid = themeid;
     }
 
     @Basic
     @Column(name = "THEME NAME")
-    public String getThemeName()
-    {
+    public String getThemeName() {
         return themeName;
     }
-    public void setThemeName(String themeName)
-    {
+
+    public void setThemeName(String themeName) {
         this.themeName = themeName;
     }
 
     @Basic
     @Column(name = "FIELD OF ACTION")
-    public String getThemeFieldOA()
-    {
+    public String getThemeFieldOA() {
         return themeFieldOA;
     }
-    public void setThemeFieldOA(String themeFieldOA)
-    {
+
+    public void setThemeFieldOA(String themeFieldOA) {
         this.themeFieldOA = themeFieldOA;
     }
 
     @Basic
     @Column(name = "TAGS")
-    public String getThemeTag()
-    {
+    public String getThemeTag() {
         return themeTag;
     }
-    public void setThemeTag(String themeTag)
-    {
+
+    public void setThemeTag(String themeTag) {
         this.themeTag = themeTag;
     }
 }

@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IdeaCrudRepository extends CrudRepository<TableIdeas, Integer>
-{
+public interface IdeaCrudRepository extends CrudRepository<TableIdeas, Integer> {
     List<TableIdeas> findByIdeaName(String Name);
 
     List<TableIdeas> findByCategory(String Category);

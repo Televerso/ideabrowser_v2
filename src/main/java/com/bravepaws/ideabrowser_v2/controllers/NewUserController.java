@@ -1,7 +1,6 @@
 package com.bravepaws.ideabrowser_v2.controllers;
 
 import com.bravepaws.ideabrowser_v2.services.UserService;
-import com.bravepaws.ideabrowser_v2.tables.TableIdeas;
 import com.bravepaws.ideabrowser_v2.tables.TableUsers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,11 +20,12 @@ public class NewUserController {
     public NewUserController(final UserService userService) {
         this.userService = userService;
     }
+
     @RequestMapping(value = "/newuser", method = RequestMethod.GET)
-    public String newIdea(Model model)
-    {
+    public String newIdea(Model model) {
         return "newuser";
     }
+
     @PostMapping(path = "/registeruser")
     public String save(@RequestParam("userName") String userName, @RequestParam("birthDate") Date birthDate, @RequestParam("сontactInfo") String сontactInfo) {
         TableUsers user = new TableUsers(userName, сontactInfo, birthDate);
