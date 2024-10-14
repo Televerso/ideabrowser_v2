@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "ideas")
 public class TableIdeas implements BaseTable {
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ideaid;
     private String ideaName;
     private String Description;
