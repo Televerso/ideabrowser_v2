@@ -14,18 +14,24 @@ import java.sql.Date;
 
 @Controller
 public class NewUserController {
+    // Сервис для взаимодействия с пользователями
     private final UserService userService;
 
+    // Конструктор
     @Autowired
-    public NewUserController(final UserService userService) {
+    public NewUserController(UserService userService) {
         this.userService = userService;
     }
 
+    // Вывод формы для создания пользователя при регистрации
     @RequestMapping(value = "/newuser", method = RequestMethod.GET)
     public String newIdea(Model model) {
         return "newuser";
     }
 
+    // Принимает форму с данными пользователя
+    // И заносит нового пользователя в таблицу
+    // Возвращает на главную страничку
     @PostMapping(path = "/registeruser")
     public String save(@RequestParam("userName") String userName, @RequestParam("birthDate") Date birthDate, @RequestParam("сontactInfo") String сontactInfo) {
         TableUsers user = new TableUsers(userName, сontactInfo, birthDate);

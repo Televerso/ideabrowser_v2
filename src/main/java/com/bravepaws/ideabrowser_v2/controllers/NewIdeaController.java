@@ -14,16 +14,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NewIdeaController {
+    // Сервисы для взаимодействия с сущностями
     private final IdeaService ideaService;
     private final UserService userService;
+    // Тут хранится текущий пользователь
     private TableUsers user;
 
+    // Конструктор
     @Autowired
     public NewIdeaController(IdeaService ideaService, UserService userService) {
         this.ideaService = ideaService;
         this.userService = userService;
     }
 
+    // Вывод формы для создания идеи при переходе на нее из странички пользователя
+    // Подбирает и устанавливает текущего пользователя на переданное значение
     @RequestMapping(value = "/newidea", method = RequestMethod.POST)
     public String newIdea(Model model, @RequestParam("currUser") int currUser) {
         user = userService.getUserById(currUser);
@@ -31,10 +36,15 @@ public class NewIdeaController {
         return "newidea";
     }
 
+    // Принимает форму для создания идеи
+    // Сохраняет идею в бд
+    // Возвращает пользователя на его страничку
     @PostMapping(path = "/createidea")
     public String save(Model model, @RequestParam("ideaName") String ideaName, @RequestParam("Category") String Category, @RequestParam("Description") String Description) {
+        // Сохранение идеи
         TableIdeas idea = new TableIdeas(ideaName, Description, Category, user.getUserId(), "active", 0);
         ideaService.saveTableIdea(idea);
+        // Добавление пользователя в модель и вывод странички
         model.addAttribute("User", user);
         return "loggedinindex";
     }
