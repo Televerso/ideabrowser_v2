@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Idea Browser</title>
+  <link href="../static/styles.css" rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+<h1>
+  <span class = "Label">
+    <span class= "LabelFirstLetter">c</span>reate
+    <span class= "LabelFirstLetter">y</span>our
+    <span class= "LabelFirstLetter">o</span>wn
+    <span class= "LabelFirstLetter">i</span>dea
+  </span>
+</h1>
+<hr>
+<div class="IdeaLineDiv">
+<div class="HalfScreenDiv">
+<form action="/allIdeas" method="post">
+  <button type = "submit" class = "GenericButton">
+    <span class="LoginTextStyle">
+          Все идеи
+    </span>
+  </button>
+</form>
+  <form action="/myIdeas" method="post">
+    <button type = "submit" class = "GenericButton">
+    <span class="LoginTextStyle">
+          Мои идеи
+    </span>
+    </button>
+  </form>
+</div>
+<div class="HalfScreenDiv">
+  <div class="RightDiv">
+  <!--/*@thymesVar id="User" type="com.bravepaws.ideabrowser_v2.tables.TableUsers"*/-->
+  <span class="LoginTextStyle" th:text="'Текущий пользователь: ' + ${User.userName}" />
+  <form action="/index" method="get">
+    <button type = "submit" class = "GenericButton">
+    <span class="LoginTextStyle">
+          Выйти
+    </span>
+    </button>
+  </form>
+  </div>
+</div>
+</div>
+<hr>
+<div class = "CentralDiv">
+  <form action="newidea" method="post">
+    <input type="hidden" name="currUser" id="currUser" value="" th:attr="value=${User.userId}" >
+    <button type="submit" class="GenericButton"> <span class = "CreateIdeaLabel">Создать новую идею</span>
+    </button>
+  </form>
+</div>
+<hr>
+<div th:each="Line:${Table}" class = "IdeaLineDiv">
+  <div  class = "IdeaBlockDiv">
+    <!--/*@thymesVar id="l_idea" type="com.bravepaws.ideabrowser_v2.tables.TableIdeas"*/-->
+    <!--/*@thymesVar id="ideaId" type="java.lang.Integer"*/-->
+    <span class = "GenericTextStyle" th:text="'Идея #' + ${Line.l_idea.ideaId}+':'"/>
+    <!--/*@thymesVar id="ideaName" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="${Line.l_idea.ideaName}"/>
+    <br>
+    <!--/*@thymesVar id="l_theme" type="com.bravepaws.ideabrowser_v2.tables.TableThemes"*/-->
+    <!--/*@thymesVar id="themeName" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="'Категория: ' + ${Line.l_idea.Category}"/>
+    <br>
+    <!--/*@thymesVar id="Status" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="'Статус: ' + ${Line.l_idea.Status}"/>
+    <br>
+    <!--/*@thymesVar id="Description" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="'Идея: ' + ${Line.l_idea.Description}"/>
+  </div>
+  <div class = "BlankBlockDiv">
+
+  </div>
+  <div  class = "UserBlockDiv">
+    <!--/*@thymesVar id="l_user" type="com.bravepaws.ideabrowser_v2.tables.TableUsers"*/-->
+    <!--/*@thymesVar id="userName" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="'Автор идеи: ' + ${Line.l_user.userName}"/>
+    <br>
+    <!--/*@thymesVar id="contactInfo" type="java.lang.String"*/-->
+    <span class = "GenericTextStyle" th:text="'Контактные данные: ' + ${Line.l_user.contactInfo}"/>
+  </div>
+</div>
+</body>
+</html>

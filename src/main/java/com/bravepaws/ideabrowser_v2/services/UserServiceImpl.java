@@ -37,4 +37,9 @@ public class UserServiceImpl implements UserService {
     public TableUsers getUserById(int id) {
         return userCrudRepository.findByUserId(id);
     }
+
+    @Transactional
+    public TableUsers getUserByName(String name) {
+        return userCrudRepository.findByUserName(name);
+    }
 }

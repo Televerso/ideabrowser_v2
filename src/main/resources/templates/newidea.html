@@ -16,7 +16,8 @@
 </h1>
 <hr>
 <div class="GenericPageDiv">
-    <form action="createidea" method="post" target="_top" >
+    <form action="createidea" method="post" target="_parent" >
+        <input type="hidden" name="currUser" id="currUser" value="" th:attr="value=${User.userId}" >
     <span class="GenericTextStyle">Создание идеи</span>
     <br>
     <span class="GenericTextStyle">
@@ -28,7 +29,7 @@
   </span>
     <br>
     <span class="GenericTextStyle">
-   <input type=text name="Description" id="Description" placeholder="Описание" required minlength="4">
+   <input type=text name="Description" id="Description" placeholder="Описание" autocomplete="">
   </span>
     <br>
     <div class="CentralDiv">

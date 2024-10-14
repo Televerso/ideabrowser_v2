@@ -50,7 +50,7 @@ body {
   .CentralDiv {
     text-align: center;
   }
-  .TagTextStyle {
+  .LoginTextStyle {
     color: white;
     text-align : left;
     font-family: system-ui;
@@ -116,4 +116,12 @@ body {
 .InlineButton:hover {
   border-color: #97FF56;
   box-shadow: 0 0 0 1px #0D493D, 0 0 0 2px #97FF56;
+}
+.RightDiv
+{
+  text-align: right;
+}
+.HalfScreenDiv {
+  width: 50%;
+  display: table-cell;
 }

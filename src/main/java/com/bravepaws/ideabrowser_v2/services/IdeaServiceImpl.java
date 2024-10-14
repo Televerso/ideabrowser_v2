@@ -35,4 +35,10 @@ public class IdeaServiceImpl implements IdeaService{
 
     @Transactional
     public TableIdeas getTableIdeaById(int id) {return ideaCrudRepository.findByIdeaId(id);}
+
+    @Transactional
+    public List<TableIdeas> getIdeasByCustomer(int customer)
+    {
+        return ideaCrudRepository.findByCustomer(customer);
+    }
 }

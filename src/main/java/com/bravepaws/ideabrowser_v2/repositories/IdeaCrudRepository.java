@@ -1,7 +1,6 @@
 package com.bravepaws.ideabrowser_v2.repositories;
 
 import com.bravepaws.ideabrowser_v2.tables.TableIdeas;
-import com.bravepaws.ideabrowser_v2.tables.TableUsersToIdeas;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +15,5 @@ public interface IdeaCrudRepository extends CrudRepository<TableIdeas, Integer>
 
     TableIdeas findByIdeaId(Integer id);
 
+    List<TableIdeas> findByCustomer(Integer id);
 }

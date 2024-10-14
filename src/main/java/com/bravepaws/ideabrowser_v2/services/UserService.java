@@ -14,4 +14,6 @@ public interface UserService {
     void deleteUser(TableUsers user);
 
     TableUsers getUserById(int id);
+
+    TableUsers getUserByName(String name);
 }

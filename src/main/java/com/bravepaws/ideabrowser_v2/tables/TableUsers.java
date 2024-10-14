@@ -12,7 +12,6 @@ public class TableUsers implements BaseTable{
     private String contactInfo;
     private Date registrationDate;
     private Date birthDate;
-    private int userIdeas;
 
     public TableUsers() {}
 
@@ -22,16 +21,14 @@ public class TableUsers implements BaseTable{
         this.contactInfo = userName;
         this.registrationDate = new Date(System.currentTimeMillis());
         this.birthDate = new Date(System.currentTimeMillis());
-        this.userIdeas = 0;
     }
 
-    public TableUsers(String userName, String contactInfo, Date birthDate, int userIdeas)
+    public TableUsers(String userName, String contactInfo, Date birthDate)
     {
         this.userName = userName;
         this.contactInfo = contactInfo;
         this.registrationDate = new Date(System.currentTimeMillis());
         this.birthDate = birthDate;
-        this.userIdeas = userIdeas;
     }
 
     @Id
@@ -89,16 +86,5 @@ public class TableUsers implements BaseTable{
     public void setBirthDate(Date birthDate)
     {
         this.birthDate = birthDate;
-    }
-
-    @Basic
-    @Column(name = "USER IDEAS")
-    public int getUserIdeas()
-    {
-        return userIdeas;
-    }
-    public void setUserIdeas(int userIdeas)
-    {
-        this.userIdeas = userIdeas;
     }
 }
